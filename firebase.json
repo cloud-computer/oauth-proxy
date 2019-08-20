@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "hosting": {
+      "rewrites": [
+        {
+          "function": "oauth-proxy",
+          "source": "/oauth-proxy"
+        }
+      ]
+    },
+    "predeploy": [
+      "yarn build"
+    ],
+    "source": "."
+  }
+}
