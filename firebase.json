@@ -1,16 +1,17 @@
 {
   "functions": {
-    "hosting": {
-      "rewrites": [
-        {
-          "function": "oauth-proxy",
-          "source": "/oauth-proxy"
-        }
-      ]
-    },
     "predeploy": [
-      "yarn build"
-    ],
-    "source": "."
+      "yarn --cwd functions install",
+      "yarn --cwd functions build"
+    ]
+  },
+  "hosting": {
+    "public": "functions/build",
+    "rewrites": [
+      {
+        "function": "firebase",
+        "source": "**"
+      }
+    ]
   }
 }
