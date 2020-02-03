@@ -52,7 +52,7 @@ const authHandler = async (req: Request, res: Response) => {
   const { state } = query;
 
   // state parameter containing user subdomain to redirect to
-  const [username] = state.split('.');
+  const username = state.split(':')[2].split('.')[1];
   const domain = hostname.split('.').slice(-2).join('.');
   const querystring = encode(query);
 

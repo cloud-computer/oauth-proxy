@@ -45,7 +45,7 @@ describe('oauth proxy', () => {
     const authSubdomain = `auth.${username}.${domain}`;
 
     // state parameter containing subdomain to redirect to
-    const state = username;
+    const state = `9f6448c7bd24c723d0f98429474412da:https://photoshop.${username}.${domain}`;
     const querystring = encode({ code, state });
 
     // check the user is redirected to the auth service oauth route
